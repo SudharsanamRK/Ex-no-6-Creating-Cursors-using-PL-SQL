@@ -11,52 +11,48 @@
 ### Program:
 ### Create employee table:
 ```
-CREATE TABLE employee (
-  empid NUMBER,
-  empname VARCHAR(20),
-  dept VARCHAR(20),
-  salary NUMBER
-);
-
-INSERT INTO employee VALUES (1, 'Sudharsanam RK', 'Sales', 100000);
-INSERT INTO employee VALUES (2, 'Chuchan', 'Marketing', 120000);
-select * from employee;
+CREATE TABLE emplys (
+    empid NUMBER,
+    empname VARCHAR(15),
+    dept VARCHAR(15),
+    salary NUMBER
+    );
+select * from emplys;
+INSERT INTO emplys VALUES (1, 'DEXTER', 'Supervisor', 40000);
+INSERT INTO emplys VALUES (2, 'JUSTIN LEE', 'Product Manager', 110000);
 ```
+
 ### Employee table :
-![image](https://github.com/SudharsanamRK/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/115523484/e417bcdf-9f1f-42c0-b598-eea56b54d10b)
+![dbms ex-06 out1](https://github.com/SudharsanamRK/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/115523484/e0cffd53-aa3c-42fa-ba65-2186fa501f23)
 
 
 ### PL/SQL Cursor code:
 ```
-DECLARE
-   CURSOR employee_cursor IS
-   SELECT empid,empname,dept,salary
-   FROM employee;
-   emp_id NUMBER;
-   emp_name VARCHAR(50);
-   emp_dept VARCHAR(50);
-   emp_salary NUMBER;
-BEGIN
-  OPEN employee_cursor;
-
-  LOOP
-    FETCH employee_cursor INTO emp_id, emp_name, emp_dept, emp_salary;
-
-    EXIT WHEN employee_cursor%NOTFOUND;
-
-    DBMS_OUTPUT.PUT_LINE('Employee ID: ' || emp_id);
-    DBMS_OUTPUT.PUT_LINE('Employee Name: ' || emp_name);
-    DBMS_OUTPUT.PUT_LINE('Department: ' || emp_dept);
-    DBMS_OUTPUT.PUT_LINE('Salary: ' || emp_salary);
-  END LOOP;
-
-  CLOSE employee_cursor;
-END;
-/
+ DECLARE
+    CURSOR emplys_cursor IS
+    SELECT empid, empname, dept, salary
+    FROM emplys;
+    emp_id NUMBER;
+    emp_name VARCHAR(15);
+    emp_dept VARCHAR(15);
+    emp_salary NUMBER;
+    BEGIN
+   OPEN emplys_cursor;
+   LOOP
+   FETCH emplys_cursor INTO emp_id, emp_name, emp_dept, emp_salary;
+   EXIT WHEN emplys_cursor%NOTFOUND;
+   DBMS_OUTPUT.PUT_LINE('EMPID: ' || emp_id);
+   DBMS_OUTPUT.PUT_LINE('EMPNAME: ' || emp_name);
+   DBMS_OUTPUT.PUT_LINE('DEPT: ' || emp_dept);
+   DBMS_OUTPUT.PUT_LINE('SALARY: ' || emp_salary);
+   END LOOP;
+   CLOSE emplys_cursor;
+   END;
+   /
 ```
 
 ### Output:
-![image](https://github.com/SudharsanamRK/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/115523484/35e22690-924c-48bf-ac44-766c5b3ccb2d)
+![dvms ex-06 out2](https://github.com/SudharsanamRK/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/115523484/3bf08619-0671-4ab4-bf54-2dd1139833a8)
 
 ### Result:
 Thus, To create a cursor using PL/SQL completed successfully.
