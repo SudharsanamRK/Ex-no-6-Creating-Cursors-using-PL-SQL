@@ -18,12 +18,12 @@ CREATE TABLE employee (
   salary NUMBER
 );
 
-INSERT INTO employee VALUES (1, 'Jeevapriya', 'Sales', 100000);
-INSERT INTO employee VALUES (2, 'Anitha', 'Marketing', 120000);
+INSERT INTO employee VALUES (1, 'Sudharsanam RK', 'Sales', 100000);
+INSERT INTO employee VALUES (2, 'Chuchan', 'Marketing', 120000);
 select * from employee;
 ```
 ### Employee table :
-![image](https://github.com/SudharsanamRK/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/115523484/c3495ea4-ed0b-4b3a-bb4e-bd5e1241f4c5)
+![image](https://github.com/SudharsanamRK/Ex-no-6-Creating-Cursors-using-PL-SQL/assets/115523484/e417bcdf-9f1f-42c0-b598-eea56b54d10b)
 
 
 ### PL/SQL Cursor code:
